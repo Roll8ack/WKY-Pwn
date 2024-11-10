@@ -101,8 +101,16 @@ if [[ $FIRMWAREVERSION == "10.00" ]] ;then
 STAGEVER="10.00"
 elif [[ $FIRMWAREVERSION == "10.01" ]] ;then
 STAGEVER="10.01"
+elif [[ $FIRMWAREVERSION == "10.50" ]] ;then
+STAGEVER="10.50"
+elif [[ $FIRMWAREVERSION == "10.70" ]] ;then
+STAGEVER="10.70"
+elif [[ $FIRMWAREVERSION == "10.71" ]] ;then
+STAGEVER="10.71"
 elif [[ $FIRMWAREVERSION == "9.00" ]] ;then
 STAGEVER="9.00"
+elif [[ $FIRMWAREVERSION == "9.60" ]] ;then
+STAGEVER="9.60"
 else
 STAGEVER="11.00"
 fi
