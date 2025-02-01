@@ -11,19 +11,11 @@ if [ -z $VMUSB ]; then VMUSB=false; fi
 if [ -z $PPDBG ]; then PPDBG=false; fi
 if [ -z $TIMEOUT ]; then TIMEOUT="1m"; fi
 WKYTYP=$(tr -d '\0' </proc/device-tree/model)
-if [[ WKYTYP == *"Xunlei OneCloud"* ]] ;then
-coproc read -t 15 && wait "$!" || true
-CPPBIN="pppwn11"
-VMUSB=false
+if [[ $WKYTYP == *"Xunlei OneCloud"* ]] ;then
+    CPPBIN="pppwn_onecloud"
 else
-coproc read -t 5 && wait "$!" || true
-CPPBIN="pppwn64"
-VMUSB=false
-fi
-arch=$(getconf LONG_BIT)
-if [ $arch -eq 32 ] && [ $CPPBIN = "pppwn64" ] ; then
-CPPBIN="pppwn7"
-VMUSB=false
+    echo -e "\033[91m Not OneCloud. Exit... \033[0m" | sudo tee /dev/tty1
+    exit
 fi
 echo -e "\n\n\033[36m _____  _____  _____
 |  __ \\|  __ \\|  __ \\
