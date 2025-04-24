@@ -101,6 +101,8 @@ elif [[ $FIRMWAREVERSION == "10.71" ]] ;then
 STAGEVER="10.71"
 elif [[ $FIRMWAREVERSION == "9.00" ]] ;then
 STAGEVER="9.00"
+elif [[ $FIRMWAREVERSION == "9.03" ]] ;then
+STAGEVER="9.03"
 elif [[ $FIRMWAREVERSION == "9.60" ]] ;then
 STAGEVER="9.60"
 else
